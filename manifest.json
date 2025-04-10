@@ -1,9 +1,22 @@
 {
   "plugin_name": "Example Plugin",
   "description": "A short description of what this plugin does clearly and briefly.",
-  "version": "0.1",
+  "version": "0.2",
   "incoming": true,
   "outgoing": true,
+  "requirements": {
+    "raingull_id": {
+      "description": "Plugins must assign (for incoming) or reuse (for outgoing) a RainGull message ID (UUID4) consistently across all message tables.",
+      "type": "UUID4",
+      "required": true
+    },
+    "snippet": {
+      "description": "Incoming plugins must generate a short snippet of the message body clearly for preview purposes.",
+      "type": "string",
+      "required": false,
+      "default_length": 200
+    }
+  },
   "config_fields": [
     {
       "name": "service_name",
@@ -49,6 +62,13 @@
       "label": "Polling Frequency (minutes)",
       "type": "integer",
       "default": 5,
+      "required": false
+    },
+    {
+      "name": "snippet_length",
+      "label": "Snippet Length",
+      "type": "integer",
+      "default": 200,
       "required": false
     }
   ]
