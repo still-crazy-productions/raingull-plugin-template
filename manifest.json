@@ -1,0 +1,55 @@
+{
+  "plugin_name": "Example Plugin",
+  "description": "A short description of what this plugin does clearly and briefly.",
+  "version": "0.1",
+  "incoming": true,
+  "outgoing": true,
+  "config_fields": [
+    {
+      "name": "service_name",
+      "label": "Unique Service Name",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "platform_server",
+      "label": "Platform Server URL",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "platform_port",
+      "label": "Platform Server Port",
+      "type": "integer",
+      "default": 443,
+      "required": true
+    },
+    {
+      "name": "encryption",
+      "label": "Encryption",
+      "type": "select",
+      "required": true,
+      "options": ["None", "STARTTLS", "SSL/TLS"],
+      "default": "SSL/TLS"
+    },
+    {
+      "name": "platform_username",
+      "label": "Platform Username",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "platform_password",
+      "label": "Platform Password",
+      "type": "password",
+      "required": false
+    },
+    {
+      "name": "poll_frequency",
+      "label": "Polling Frequency (minutes)",
+      "type": "integer",
+      "default": 5,
+      "required": false
+    }
+  ]
+}
